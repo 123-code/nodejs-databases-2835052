@@ -3,14 +3,19 @@
 const http = require('http');
 const mongoose = require('mongoose');
 
+  
 const config = require('../config');
 const App = require('../app');
 
-async function connectToMongoose() {
-  return mongoose.connect(config.mongodb.url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
+
+
+
+async function connect(){
+  return mongoose.connect(config.mongodb.url,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+    useCreateIndex:true,
+
   });
 }
 
@@ -54,9 +59,19 @@ function onListening() {
 server.on('error', onError);
 server.on('listening', onListening);
 
+
 connectToMongoose().then(() => {
   console.info('Successfully connected to MongoDB');
   server.listen(port);
 }).catch((error) => {
   console.error(error);
 });
+
+connect().then(()=>{
+  console.info('Successfully connected');
+  server.listen(port);
+}).catch((err)=>{
+  console.error(err);
+});
+
+        

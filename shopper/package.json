@@ -12,7 +12,11 @@
     "cookie-parser": "~1.4.5",
     "express": "~4.17.1",
     "express-session": "^1.17.1",
+<<<<<<< Updated upstream
     "mongoose": "^5.10.9",
+=======
+    "mongoose": "^6.2.4",
+>>>>>>> Stashed changes
     "pug": "~3.0.0"
   },
   "devDependencies": {

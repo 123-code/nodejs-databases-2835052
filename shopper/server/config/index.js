@@ -4,5 +4,7 @@ module.exports = {
   applicationName: pkg.name,
   mongodb: {
     url: 'mongodb://localhost:37017/shopper',
+  mongodb:{
+    url:'mongodb://localhost:37017/shopper'
   }
-};
+}}
